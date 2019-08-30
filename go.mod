@@ -1,4 +1,4 @@
-module eloqua
+module github.com/elqx/eloqua-go
 
 go 1.12
 
