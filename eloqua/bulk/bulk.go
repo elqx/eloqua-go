@@ -131,9 +131,6 @@ func (c *BulkClient) NewRequest(method, urlStr string, body interface{}) (*http.
 	}
 
 	u, err := url.Parse(urlStr[1:])
-//	fmt.Println("kkkkk = ", path.Join(c.baseURL.String(), urlStr))
-//	u, err := url.Parse(path.Join(c.baseURL.String(),urlStr))
-//	fmt.Println("uuuuuuuuu = ", u.String())
 	if err != nil {
 		return nil, err
 	}
