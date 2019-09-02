@@ -73,3 +73,25 @@ func TestContactsService_DeleteExportData(t *testing.T) {
 		t.Errorf("Contacts.DeleteExportDara returned error: %v", err)
 	}
 }
+
+func TestContactsService_GetFields(t *testing.T) {
+	client, mux, _, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/contacts/fields", func (w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, `{"items": [{"name": "Email Address"}]}`)
+	})
+
+	ctx := context.Background()
+	got, err := client.Contacts.GetFields(ctx)
+	if err != nil {
+		t.Errorf("Contacts.GetFields returned error: %v", err)
+	}
+
+	want := &ContactFieldSearchResponse{Items: []ContactField{{Name: "Email Address"}}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("Contacts.GetFields returned %+v, want %+v", got, want)
+	}
+
+}

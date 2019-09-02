@@ -9,6 +9,29 @@ import (
 
 type ContactsService service
 
+
+type ContactField struct {
+	Name string `json:"name"`
+	InternalName string `json:"internalName"`
+	DataType string `json:"dataType"`
+	HasReadOnlyConstraint string `json:"hasReadOnlyConstraint"`
+	HasNotNullConstraint string `json:hasNotNullConstraint`
+	HasUniquenessConstraint string `json:"hasUniquenessConstraint"`
+	Statement string `json:"statement"`
+	Uri string `json:"uri"`
+	CreatedAt string `json:"createdAt"`
+	UpdatedAt string `json:"updatedAt"`
+}
+
+type ContactFieldSearchResponse struct {
+	Count int `json:"count,omitempty"`
+	HasMore bool `json:"hasMore,omitempty"`
+	Items []ContactField `json:"items,omitempty"`
+	Limit int `json:"limit,omitempty"`
+	Offset int `json:"offset,omitempty"`
+	TotalResults int64 `json:"totalResults,omitempty"`
+}
+
 func (s *ContactsService) CreateExport(ctx context.Context, export *Export) (*Export, error) {
 	req, err := s.client.NewRequest("POST", "/contacts/exports", export)
 	if err != nil {
@@ -42,4 +65,19 @@ func (s *ContactsService) DeleteExportData(ctx context.Context, id int) (*http.R
 		return nil, err
 	}
 	return s.client.Do(ctx, req, nil)
+}
+
+func (s *ContactsService) GetFields(ctx context.Context) (*ContactFieldSearchResponse, error) {
+	req, err := s.client.NewRequest("GET", "/contacts/fields", nil)
+	if err != nil {
+		return nil, err
+	}
+
+	r := &ContactFieldSearchResponse{}
+	_, err = s.client.Do(ctx, req, r)
+	if err != nil {
+		return nil, err
+	}
+
+	return r, nil
 }
