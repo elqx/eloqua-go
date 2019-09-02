@@ -42,19 +42,19 @@ func TestContactsService_CreateExport(t *testing.T) {
 		t.Errorf("Contacts.CreateExport returned %+v, want %+v", got, want)
 	}
 }
-/*
+
 func TestContactsService_DeleteExport(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/contactss/exports/1", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/contacts/exports/1", func (w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "DELETE")
 	})
 
 	ctx := context.Background()
-	_, err := client.Activities.DeleteExport(ctx, 1)
+	_, err := client.Contacts.DeleteExport(ctx, 1)
 	if err != nil {
-		t.Errorf("Activities.DeleteExport returned error: %v", err)
+		t.Errorf("Contacts.DeleteExport returned error: %v", err)
 	}
 }
 
@@ -68,9 +68,8 @@ func TestContactsService_DeleteExportData(t *testing.T) {
 	})
 
 	ctx := context.Background()
-	_, err := client.Activities.DeleteExportData(ctx, 1)
+	_, err := client.Contacts.DeleteExportData(ctx, 1)
 	if err != nil {
-		t.Errorf("Activities.DeleteExportDara returned error: %v", err)
+		t.Errorf("Contacts.DeleteExportDara returned error: %v", err)
 	}
 }
-*/
