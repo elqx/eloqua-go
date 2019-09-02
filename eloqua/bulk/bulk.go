@@ -71,6 +71,23 @@ type AccountInfo struct {
 	Urls Urls `json:"urls,omitempty"`
 }
 
+type QueryOptions struct {
+	// Specifies the maximum number of records to return.
+	// If not specified, the default it 1000.
+	Limit int `url:"limit,omitempty"`
+
+	Links string `url:"links,omitempty"`
+
+	// Specifies an offset that allows you to retrieve
+	// the next batch of records. Any positive integer.
+	// If not specified the default is 0.
+	Offset int `url:"offset,omitempty"`
+
+	// Specified whether Total number of sync results found should be returned.
+	// If not specified, the default is true.
+	TotalResults bool `url:"totalResults,omitempty"`
+}
+
 // addOptions adds the parameters in opt as URL query parameters to s.
 func addOptions(s string, opt interface{}) (string, error) {
 	v := reflect.ValueOf(opt)

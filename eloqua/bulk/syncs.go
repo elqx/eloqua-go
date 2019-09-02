@@ -38,23 +38,6 @@ type SyncDataQueryResponse struct {
 	TotalResults int64 `json:"totalResults,omitempty"`
 }
 
-type QueryOptions struct {
-	// Specifies the maximum number of records to return.
-	// If not specified, the default it 1000.
-	Limit int `url:"limit,omitempty"`
-
-	Links string `url:"links,omitempty"`
-
-	// Specifies an offset that allows you to retrieve
-	// the next batch of records. Any positive integer.
-	// If not specified the default is 0.
-	Offset int `url:"offset,omitempty"`
-
-	// Specified whether Total number of sync results found should be returned.
-	// If not specified, the default is true.
-	TotalResults bool `url:"totalResults,omitempty"`
-}
-
 // Eloqua API docs: https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-bulk-2.0-syncs-post.html
 func (s *SyncsService) Create(ctx context.Context, sync *Sync) (*Sync, error) {
 	req, err := s.client.NewRequest("POST", "/syncs", sync)

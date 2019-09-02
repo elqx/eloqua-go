@@ -56,6 +56,13 @@ type ActivityFieldSearchResponse struct {
 	TotalResults int64 `json:"totalResults,omitempty"`
 }
 
+type ActivityFieldListQueryOptions struct {
+	// The activity type to filter results
+	ActivityType string `url:"activityType,omitempty"`
+
+	QueryOptions
+}
+
 // Eloqua API docs: https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-bulk-2.0-activities-exports-post.html
 func (s *ActivitiesService) CreateExport(ctx context.Context, export *Export) (*Export, error) {
 	req, err := s.client.NewRequest("POST", "/activities/exports", export)
@@ -109,8 +116,11 @@ func (s *ActivitiesService) ListExports(ctx context.Context) (*ActivityExportSea
 }
 
 // Eloqua API docs: https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-bulk-2.0-activities-fields-get.html
-func (s *ActivitiesService) ListFields(ctx context.Context) (*ActivityFieldSearchResponse, error) {
-	req, err := s.client.NewRequest("GET", "/activities/fields", nil)
+func (s *ActivitiesService) ListFields(ctx context.Context, opt *ActivityFieldListQueryOptions) (*ActivityFieldSearchResponse, error) {
+	u := "/activities/fields"
+	u, err := addOptions(u, opt)
+
+	req, err := s.client.NewRequest("GET", u, nil)
 	if err != nil {
 		return nil, err
 	}

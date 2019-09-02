@@ -105,7 +105,7 @@ func TestActivitiesService_ListFields(t *testing.T) {
 	})
 
 	ctx := context.Background()
-	got, err := client.Activities.ListFields(ctx)
+	got, err := client.Activities.ListFields(ctx, nil)
 	if err != nil {
 		t.Errorf("Activities.ListFields returned error: %v", err)
 	}
