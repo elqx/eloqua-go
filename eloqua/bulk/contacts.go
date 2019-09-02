@@ -14,9 +14,9 @@ type ContactField struct {
 	Name string `json:"name"`
 	InternalName string `json:"internalName"`
 	DataType string `json:"dataType"`
-	HasReadOnlyConstraint string `json:"hasReadOnlyConstrainti,omitempty"`
-	HasNotNullConstraint string `json:"hasNotNullConstraint,omitempty"`
-	HasUniquenessConstraint string `json:"hasUniquenessConstraint,omitempty"`
+	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
+	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
+	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
 	Statement string `json:"statement"`
 	Uri string `json:"uri"`
 	CreatedAt string `json:"createdAt"`
