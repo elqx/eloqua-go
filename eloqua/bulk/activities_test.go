@@ -73,3 +73,45 @@ func TestActivitiesService_DeleteExportData(t *testing.T) {
 		t.Errorf("Activities.DeleteExportDara returned error: %v", err)
 	}
 }
+
+func TestActivitiesService_ListExports(t *testing.T) {
+	client, mux, _, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/activities/exports", func(w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, `{"items": [{"uri": "/abc"}]}`)
+	})
+
+	ctx := context.Background()
+	got, err := client.Activities.ListExports(ctx)
+	if err != nil {
+		t.Errorf("Activities.ListExports returned error: %v", err)
+	}
+
+	want := &ActivityExportSearchResponse{Items: []Export{{Uri: "/abc"}}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("Activties.ListExports returned %+v, want %+v", got, want)
+	}
+}
+
+func TestActivitiesService_ListFields(t *testing.T) {
+	client, mux, _, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/activities/fields", func(w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, `{"items": [{"name": "abc"}]}`)
+	})
+
+	ctx := context.Background()
+	got, err := client.Activities.ListFields(ctx)
+	if err != nil {
+		t.Errorf("Activities.ListFields returned error: %v", err)
+	}
+
+	want := &ActivityFieldSearchResponse{Items: []ActivityField{{Name: "abc"}}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("Activties.ListFields returned %+v, want %+v", got, want)
+	}
+}
