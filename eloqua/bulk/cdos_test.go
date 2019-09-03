@@ -65,3 +65,25 @@ func TestCdosService_ListFields(t *testing.T) {
 	}
 
 }
+
+func TestCdosService_List(t *testing.T) {
+	client, mux, _, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/customObjects", func (w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, `{"items": [{"name": "CDO1"}]}`)
+	})
+
+	ctx := context.Background()
+	got, err := client.Cdos.List(ctx)
+	if err != nil {
+		t.Errorf("Cdos.List returned error: %v", err)
+	}
+
+	want := &CdoSearchResponse{Items: []Cdo{{Name: "CDO1"}}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("Cdo.List returned %+v, want %+v", got, want)
+	}
+
+}
