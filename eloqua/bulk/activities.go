@@ -26,15 +26,10 @@ type Export struct {
 }
 
 type ActivityField struct {
-	Name string `json:"name"`
-	InternalName string `json:"internalName"`
-	DataType string `json:"dataType"`
-	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
-	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
-	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
-	Statement string `json:"statement"`
+	// The list of activity types that the field exists on
 	ActivityTypes []string `json:"activityTypes,omitempty"`
-	Uri string `json:"uri"`
+
+	Field
 }
 
 type ActivityExportSearchResponse struct {

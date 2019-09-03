@@ -10,18 +10,7 @@ import (
 type ContactsService service
 
 
-type ContactField struct {
-	Name string `json:"name"`
-	InternalName string `json:"internalName"`
-	DataType string `json:"dataType"`
-	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
-	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
-	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
-	Statement string `json:"statement"`
-	Uri string `json:"uri"`
-	CreatedAt string `json:"createdAt"`
-	UpdatedAt string `json:"updatedAt"`
-}
+type ContactField Field
 
 type ContactFieldSearchResponse struct {
 	Count int `json:"count,omitempty"`

@@ -110,7 +110,7 @@ func TestActivitiesService_ListFields(t *testing.T) {
 		t.Errorf("Activities.ListFields returned error: %v", err)
 	}
 
-	want := &ActivityFieldSearchResponse{Items: []ActivityField{{Name: "abc"}}}
+	want := &ActivityFieldSearchResponse{Items: []ActivityField{{nil, Field{Name: "abc"}}}}
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("Activties.ListFields returned %+v, want %+v", got, want)
 	}

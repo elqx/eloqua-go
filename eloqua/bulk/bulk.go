@@ -31,6 +31,7 @@ type BulkClient struct {
 
 	// Services used for talking with different parts of Eloqua API
 	Activities *ActivitiesService
+	Cdos	   *CdosService
 	Contacts   *ContactsService
 	Syncs      *SyncsService
 }
@@ -69,6 +70,19 @@ type Soap struct {
 type AccountInfo struct {
 	Site Site `json:"site,omitempty"`
 	Urls Urls `json:"urls,omitempty"`
+}
+
+type Field struct {
+	Name string `json:"name"`
+	InternalName string `json:"internalName"`
+	DataType string `json:"dataType"`
+	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
+	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
+	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
+	Statement string `json:"statement"`
+	Uri string `json:"uri"`
+	CreatedAt string `json:"createdAt"`
+	UpdatedAt string `json:"updatedAt"`
 }
 
 type QueryOptions struct {
@@ -138,6 +152,7 @@ func NewClient(bulkURL string, httpClient *http.Client) *BulkClient {
 	c.common.client = c
 	c.Activities = (*ActivitiesService)(&c.common)
 	c.Contacts = (*ContactsService)(&c.common)
+	c.Cdos = (*CdosService)(&c.common)
 	c.Syncs = (*SyncsService)(&c.common)
 	return c
 }
