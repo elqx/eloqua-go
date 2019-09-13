@@ -18,8 +18,8 @@ type Export struct {
 	Name                     string            `json:"name,omitempty"`
 	Fields                   map[string]string `json:"fields,omitempty"`
 	Filter                   string            `json:"filter,omitempty"`
-	KbUsed                   int               `json:"kbUsed,omitempty"`
-	MaxRecords               int               `json:"maxRecords,omitempty"`
+	KbUsed                   uint               `json:"kbUsed,omitempty"`
+	MaxRecords               uint              `json:"maxRecords,omitempty"`
 	UpdatedAt                string            `json:"updatedAt,omitempty"`
 	UpdatedBy                string            `json:"updatedBy,omitempty"`
 	Uri                      string            `json:"uri,omitempty"`
