@@ -95,3 +95,25 @@ func TestContactsService_GetFields(t *testing.T) {
 	}
 
 }
+
+func TestContactsService_ListLeadModels(t *testing.T) {
+	client, mux, _, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/contacts/scoring/models", func (w http.ResponseWriter, r *http.Request) {
+		testMethod(t, r, "GET")
+		fmt.Fprint(w, `{"items": [{"name": "LeadModel1"}]}`)
+	})
+
+	ctx := context.Background()
+	got, err := client.Contacts.ListLeadModels(ctx)
+	if err != nil {
+		t.Errorf("Contacts.ListLeadModels returned error: %v", err)
+	}
+
+	want := &LeadModelsSearchResponse{Items: []LeadModel{{Name: "LeadModel1"}}}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("Contacts.ListLeadModels returned %+v, want %+v", got, want)
+	}
+
+}

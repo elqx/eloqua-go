@@ -74,15 +74,15 @@ type AccountInfo struct {
 
 type Field struct {
 	Name string `json:"name"`
-	InternalName string `json:"internalName"`
+	InternalName string `json:"internalName,omitempty"`
 	DataType string `json:"dataType"`
 	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
 	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
 	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
 	Statement string `json:"statement"`
-	Uri string `json:"uri"`
-	CreatedAt string `json:"createdAt"`
-	UpdatedAt string `json:"updatedAt"`
+	Uri string `json:"uri,omitempty"`
+	CreatedAt string `json:"createdAt,omitempty"`
+	UpdatedAt string `json:"updatedAt,omitempty"`
 }
 
 type QueryOptions struct {
