@@ -76,9 +76,9 @@ type Field struct {
 	Name string `json:"name"`
 	InternalName string `json:"internalName,omitempty"`
 	DataType string `json:"dataType"`
-	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti,omitempty"`
-	HasNotNullConstraint bool `json:"hasNotNullConstraint,omitempty"`
-	HasUniquenessConstraint bool `json:"hasUniquenessConstraint,omitempty"`
+	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti"`
+	HasNotNullConstraint bool `json:"hasNotNullConstraint"`
+	HasUniquenessConstraint bool `json:"hasUniquenessConstraint"`
 	Statement string `json:"statement"`
 	Uri string `json:"uri,omitempty"`
 	CreatedAt string `json:"createdAt,omitempty"`
