@@ -12,6 +12,7 @@ import (
 	"strings"
 	"reflect"
 
+	"github.com/elqx/eloqua-go/eloqua/pkg/auth"
 	"github.com/google/go-querystring/query"
 )
 
@@ -124,7 +125,7 @@ func addOptions(s string, opt interface{}) (string, error) {
 }
 
 func GetAccountInfo(username, password string) (*AccountInfo, error) {
-	tr := BasicAuthTransport{Username: username, Password: password}
+	tr := auth.BasicAuthTransport{Username: username, Password: password}
 	client := NewClient(baseURL, tr.Client())
 	req, _ := client.NewRequest("GET", "/id", nil)
 
