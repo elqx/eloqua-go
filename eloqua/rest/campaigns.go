@@ -10,6 +10,26 @@ type CampaignsService base.Service
 type Campaign struct {
 	Id string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
+	Description string `json:"description,omitempty"`
+	Type string `json:"type,omitempty"`
+	CurrentStatus string `json:"currentStatus,omitempty"`
+	Depth string `json:"depth,omitempty"`
+	CreatedAt string `json:"createdAt,omitempty"`
+	CreatedBy string `json:"createdBy,omitempty"`
+	UpdatedAt string `json:"updatedAt,omitempty"`
+	UpdatedBy string `json:"updatedBy,omitempty"`
+	FolderId string `json:"folderId,omitempty"`
+	IsReadOnly string `json:"isReadOnly,omitempty"`
+	ActualCost string `json:"actualCost,omitempty"`
+	BudgetedCost string `json:"budgetedCost,omitempty"`
+	CampaignCategory string `json:"campaignCategory,omitempty"`
+	CampaignType string `json:"campaignType,omitempty"`
+	IsEmailMarketingCampaign string `json:"isEmailMarketingCampaign,omitempty"`
+	IsIncludedInROI string `json:"isIncludedInROI,omitempty"`
+	IsMemberAllowedReEntry string `json:"isMemberAllowedReEntry,omitempty"`
+	IsSyncedWithCRM string `json:"isSyncedWithCRM,omitempty"`
+	Product string `json:"product,omitempty"`
+	Region string `json:"region,omitempty"`
 }
 
 type CampaignList struct {
