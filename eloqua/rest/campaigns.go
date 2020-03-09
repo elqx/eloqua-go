@@ -63,7 +63,7 @@ type CampaignOutputTerminal struct {
 }
 
 type Position struct {
-	Type string `json:"position,omitempty"`
+	Type string `json:"type,omitempty"`
 	X string `json:"x,omitempty"`
 	Y string `json:"y,omitempty"`
 }
