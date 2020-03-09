@@ -30,6 +30,48 @@ type Campaign struct {
 	IsSyncedWithCRM string `json:"isSyncedWithCRM,omitempty"`
 	Product string `json:"product,omitempty"`
 	Region string `json:"region,omitempty"`
+	FieldValues []FieldValue `json:"fieldValues,omitempty"`
+	BadgeId string `json:"badgeId,omitempty"`
+	ClrEndDate string `json:"clrEndDate,omitempty"`
+	CrmId string `json:"crmId,omitempty"`
+	EndAt string `json:"endAt,omitempty"`
+	FirstActivation string `json:"firstActivation,omitempty"`
+	MemberCount string `json:"memberCount,omitempty"`
+	RunAsUserId string `json:"runAsUserId,omitempty"`
+	ScheduledFor string `json:"scheduledFor,omitempty"`
+	SourceTemplateId string `json:"sourceTemplateId,omitempty"`
+	StartAt string `json:"startAt,omitempty"`
+	Elements []CampaignElement `json:"elements,omitempty"`
+}
+
+type CampaignElement struct {
+	Id string `json:"id,omitempty"`
+	Type string `json:"type,omitempty"`
+	Name string `json:"name,omitempty"`
+	MemberCount string `json:"memberCount,omitempty"`
+	MemberErrorCount string `json:"memberErrorCount,omitempty"`
+	OutputTerminals []CampaignOutputTerminal `json:"outputTerminals,omitempty"`
+	Position
+}
+
+type CampaignOutputTerminal struct {
+	Id string `json:"id,omitempty"`
+	Type string `json:"type.omitempty"`
+	ConnectedId string `json:"connectedId,omitempty"`
+	ConnectedType string `json:"connectedType,omitempty"`
+	TerminalType string `json:"terminalType,ommitempty"`
+}
+
+type Position struct {
+	Type string `json:"position,omitempty"`
+	X string `json:"x,omitempty"`
+	Y string `json:"y,omitempty"`
+}
+
+type FieldValue struct {
+	Type string `json:"fieldValue,omitempty"`
+	Id string `json:"id,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 type CampaignList struct {
