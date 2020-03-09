@@ -69,10 +69,10 @@ type Position struct {
 }
 
 type FieldValue struct {
-	Type string `json:"type,omitempty"`
-	Id string `json:"id,omitempty"`
+	Type string `json:"type"`
+	Id string `json:"id"`
 	Name string `json:"name,omitempty"`
-	Value string `json:"value,omitempty"`
+	Value string `json:"value"`
 }
 
 type CampaignList struct {
