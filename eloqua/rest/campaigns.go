@@ -30,7 +30,7 @@ type Campaign struct {
 	IsSyncedWithCRM string `json:"isSyncedWithCRM"`
 	Product string `json:"product"`
 	Region string `json:"region"`
-	FieldValues []FieldValue `json:"fieldValues"`
+	FieldValues []FieldValue `json:"fieldValues,omitempty"`
 	BadgeId string `json:"badgeId"`
 	ClrEndDate string `json:"clrEndDate"`
 	CrmId string `json:"crmId"`
@@ -50,7 +50,7 @@ type CampaignElement struct {
 	Name string `json:"name"`
 	MemberCount string `json:"memberCount"`
 	MemberErrorCount string `json:"memberErrorCount"`
-	OutputTerminals []CampaignOutputTerminal `json:"outputTerminals"`
+	OutputTerminals []CampaignOutputTerminal `json:"outputTerminals,omitempty"`
 	Position Position `json:"position"`
 }
 
