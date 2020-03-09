@@ -51,7 +51,7 @@ type CampaignElement struct {
 	MemberCount string `json:"memberCount"`
 	MemberErrorCount string `json:"memberErrorCount"`
 	OutputTerminals []CampaignOutputTerminal `json:"outputTerminals"`
-	Position
+	Position Position `json:"position"`
 }
 
 type CampaignOutputTerminal struct {
