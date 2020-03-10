@@ -35,18 +35,18 @@ type EmailGroup struct {
 	UnsubscriptionListId              string          `json:"unsubscriptionListId,omitempty"`
 }
 
-type EmailGroupsList struct {
+type EmailGroupList struct {
 	Elements []EmailGroup `json:"elements,omitempty"`
 	PageSummary
 }
 
-func (s *EmailGroupsService) ListEmailGroups(ctx context.Context, options *GetOptions) (*EmailGroup, error) {
+func (s *EmailGroupsService) ListEmailGroups(ctx context.Context, options *GetOptions) (*EmailGroupList, error) {
 	req, err := s.Client.NewRequest("GET", "/assets/email/groups", options, nil)
 	if err != nil {
 		return nil, err
 	}
 
-	r := &EmailGroupsList{}
+	r := &EmailGroupList{}
 	_, err = s.Client.Do(ctx, req, r)
 
 	if err != nil {
