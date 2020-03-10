@@ -8,34 +8,34 @@ import (
 type SyncsService service
 
 type Sync struct {
-	CallbackURL string `json:"callbackUrl,omitempty"`
-	CreatedAt string `json:"createdAt,omitempty"`
-	CreatedBy string `json:"createdBy,omitempty"`
-	Status string `json:"status,omitempty"`
+	CallbackURL       string `json:"callbackUrl,omitempty"`
+	CreatedAt         string `json:"createdAt,omitempty"`
+	CreatedBy         string `json:"createdBy,omitempty"`
+	Status            string `json:"status,omitempty"`
 	SyncedInstanceURI string `json:"syncedInstanceUri,omitempty"`
-	SyncedEndAt string `json:"syncedEndAt,omitempty"`
-	SyncStartedAt string `json:"syncedStartedAt,omitempty"`
-	Uri string `json:"uri,omitempty"`
+	SyncedEndAt       string `json:"syncedEndAt,omitempty"`
+	SyncStartedAt     string `json:"syncedStartedAt,omitempty"`
+	Uri               string `json:"uri,omitempty"`
 }
 
 type SyncLog struct {
-	SyncURI string `json:"syncUri"`
-	Count int `json:"count"`
-	Severity string `json:"serverity"`
+	SyncURI    string `json:"syncUri"`
+	Count      int    `json:"count"`
+	Severity   string `json:"serverity"`
 	StatusCode string `json:"statusCode"`
-	Message string `json:"message"`
-	CreatedAt string `json:"createdAt"`
+	Message    string `json:"message"`
+	CreatedAt  string `json:"createdAt"`
 }
 
 type Item map[string]string
 
 type SyncDataQueryResponse struct {
-	Count int `json:"count,omitempty"`
-	HasMore bool `json:"hasMore,omitempty"`
-	Items []Item `json:"items,omitempty"`
-	Limit int `json:"limit,omitempty"`
-	Offset int `json:"offset,omitempty"`
-	TotalResults int64 `json:"totalResults,omitempty"`
+	Count        int    `json:"count,omitempty"`
+	HasMore      bool   `json:"hasMore,omitempty"`
+	Items        []Item `json:"items,omitempty"`
+	Limit        int    `json:"limit,omitempty"`
+	Offset       int    `json:"offset,omitempty"`
+	TotalResults int64  `json:"totalResults,omitempty"`
 }
 
 // Eloqua API docs: https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-bulk-2.0-syncs-post.html
@@ -92,4 +92,3 @@ func (s *SyncsService) GetData(ctx context.Context, id int, opt *QueryOptions) (
 
 	return data, nil
 }
-

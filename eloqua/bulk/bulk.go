@@ -9,8 +9,8 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
 
 	"github.com/elqx/eloqua-go/eloqua/pkg/auth"
 	"github.com/google/go-querystring/query"
@@ -32,7 +32,7 @@ type BulkClient struct {
 
 	// Services used for talking with different parts of Eloqua API
 	Activities *ActivitiesService
-	Cdos	   *CdosService
+	Cdos       *CdosService
 	Contacts   *ContactsService
 	Syncs      *SyncsService
 }
@@ -48,7 +48,7 @@ type Site struct {
 
 type Urls struct {
 	Base string `json:"base,omitempty"`
-	Apis Apis `json:"apis,omitempty"`
+	Apis Apis   `json:"apis,omitempty"`
 }
 
 type Apis struct {
@@ -58,13 +58,13 @@ type Apis struct {
 
 type Rest struct {
 	Standard string `json:"standard,omitempty"`
-	Bulk string `json:"bulk,omitempty"`
+	Bulk     string `json:"bulk,omitempty"`
 }
 
 type Soap struct {
-	Standard string `json:"standard,omitempty"`
-	DataTransfer string `json:"dataTransfer,omitempty"`
-	Email string `json:"email,omitempty"`
+	Standard       string `json:"standard,omitempty"`
+	DataTransfer   string `json:"dataTransfer,omitempty"`
+	Email          string `json:"email,omitempty"`
 	ExternalAction string `json:"externalAction,omitempty"`
 }
 
@@ -74,16 +74,16 @@ type AccountInfo struct {
 }
 
 type Field struct {
-	Name string `json:"name"`
-	InternalName string `json:"internalName,omitempty"`
-	DataType string `json:"dataType"`
-	HasReadOnlyConstraint bool `json:"hasReadOnlyConstrainti"`
-	HasNotNullConstraint bool `json:"hasNotNullConstraint"`
-	HasUniquenessConstraint bool `json:"hasUniquenessConstraint"`
-	Statement string `json:"statement"`
-	Uri string `json:"uri,omitempty"`
-	CreatedAt string `json:"createdAt,omitempty"`
-	UpdatedAt string `json:"updatedAt,omitempty"`
+	Name                    string `json:"name"`
+	InternalName            string `json:"internalName,omitempty"`
+	DataType                string `json:"dataType"`
+	HasReadOnlyConstraint   bool   `json:"hasReadOnlyConstrainti"`
+	HasNotNullConstraint    bool   `json:"hasNotNullConstraint"`
+	HasUniquenessConstraint bool   `json:"hasUniquenessConstraint"`
+	Statement               string `json:"statement"`
+	Uri                     string `json:"uri,omitempty"`
+	CreatedAt               string `json:"createdAt,omitempty"`
+	UpdatedAt               string `json:"updatedAt,omitempty"`
 }
 
 type QueryOptions struct {
@@ -207,4 +207,3 @@ func (c *BulkClient) Do(ctx context.Context, req *http.Request, v interface{}) (
 	}
 	return resp, err
 }
-

@@ -8,18 +8,18 @@ import (
 type EmailsService base.Service
 
 type Email struct {
-	Id string `json:"id,omitempty"`
-	Name string `json:"name,omitempty"`
-	Type string `json:"type,omitempty"`
+	Id            string `json:"id,omitempty"`
+	Name          string `json:"name,omitempty"`
+	Type          string `json:"type,omitempty"`
 	CurrentStatus string `json:"currentStatus,omitempty"`
-	Depth string `json:"depth,omitempty"`
-	CreatedAt string `json:"createdAt,omitempty"`
-	CreatedBy string `json:"createdBy,omitempty"`
-	UpdatedAt string `json:"updatedAt,omitempty"`
-	UpdatedBy string `json:"updatedBy,omitempty"`
-	FolderId string `json:"folderId,omitempty"`
-	Subject string `json:"subject,omitempty"`
-	Archive string `json:"archive,omitempty"`
+	Depth         string `json:"depth,omitempty"`
+	CreatedAt     string `json:"createdAt,omitempty"`
+	CreatedBy     string `json:"createdBy,omitempty"`
+	UpdatedAt     string `json:"updatedAt,omitempty"`
+	UpdatedBy     string `json:"updatedBy,omitempty"`
+	FolderId      string `json:"folderId,omitempty"`
+	Subject       string `json:"subject,omitempty"`
+	Archive       string `json:"archive,omitempty"`
 }
 
 type EmailList struct {
@@ -33,7 +33,7 @@ func (s *EmailsService) ListEmails(ctx context.Context, options *GetOptions) (*E
 		return nil, err
 	}
 
-	r :=&EmailList{}
+	r := &EmailList{}
 	_, err = s.Client.Do(ctx, req, r)
 
 	if err != nil {

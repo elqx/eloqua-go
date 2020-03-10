@@ -47,7 +47,7 @@ func TestActivitiesService_DeleteExport(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/activities/exports/1", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/activities/exports/1", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "DELETE")
 	})
 
@@ -58,12 +58,11 @@ func TestActivitiesService_DeleteExport(t *testing.T) {
 	}
 }
 
-
 func TestActivitiesService_DeleteExportData(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/activities/exports/1/data", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/activities/exports/1/data", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "DELETE")
 	})
 

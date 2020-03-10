@@ -47,7 +47,7 @@ func TestContactsService_DeleteExport(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/contacts/exports/1", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/contacts/exports/1", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "DELETE")
 	})
 
@@ -58,12 +58,11 @@ func TestContactsService_DeleteExport(t *testing.T) {
 	}
 }
 
-
 func TestContactsService_DeleteExportData(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/contacts/exports/1/data", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/contacts/exports/1/data", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "DELETE")
 	})
 
@@ -78,7 +77,7 @@ func TestContactsService_GetFields(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/contacts/fields", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/contacts/fields", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "GET")
 		fmt.Fprint(w, `{"items": [{"name": "Email Address"}]}`)
 	})
@@ -100,7 +99,7 @@ func TestContactsService_ListLeadModels(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/contacts/scoring/models", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/contacts/scoring/models", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "GET")
 		fmt.Fprint(w, `{"items": [{"name": "LeadModel1"}]}`)
 	})

@@ -18,7 +18,7 @@ type GetOptions struct {
 	// Must be less than or equal to 1000 and greater than or equal to 1.
 	Count int `url:"count,omitempty"`
 
-	// Level of detail returned by the request. 
+	// Level of detail returned by the request.
 	// Eloqua APIs can retrieve entities at three different levels of depth: minimal, partial, and complete.
 	// Any other values passed are reset to minimal by default.
 	Depth string `url:"depth,omitempty"`
@@ -38,9 +38,9 @@ type GetOptions struct {
 }
 
 type PageSummary struct {
-	Page int `json:"page,omitempty"`
+	Page     int `json:"page,omitempty"`
 	PageSize int `json:"pageSize,omitempty"`
-	Total int `json:"total,omitempty"`
+	Total    int `json:"total,omitempty"`
 }
 
 type RestClient struct {
@@ -48,9 +48,9 @@ type RestClient struct {
 	base.BaseClient
 
 	// Services used for talking with different parts of Eloqua API.
-	Emails *EmailsService
+	Emails    *EmailsService
 	Campaigns *CampaignsService
-	Forms *FormsService
+	Forms     *FormsService
 }
 
 /*

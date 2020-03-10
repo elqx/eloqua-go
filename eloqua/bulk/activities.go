@@ -18,7 +18,7 @@ type Export struct {
 	Name                     string            `json:"name,omitempty"`
 	Fields                   map[string]string `json:"fields,omitempty"`
 	Filter                   string            `json:"filter,omitempty"`
-	KbUsed                   uint               `json:"kbUsed,omitempty"`
+	KbUsed                   uint              `json:"kbUsed,omitempty"`
 	MaxRecords               uint              `json:"maxRecords,omitempty"`
 	UpdatedAt                string            `json:"updatedAt,omitempty"`
 	UpdatedBy                string            `json:"updatedBy,omitempty"`
@@ -33,22 +33,21 @@ type ActivityField struct {
 }
 
 type ActivityExportSearchResponse struct {
-	Count int `json:"count,omitempty"`
-	HasMore bool `json:"hasMore,omitempty"`
-	Items []Export `json:"items,omitempty"`
-	Limit int `json:"limit,omitempty"`
-	Offset int `json:"offset,omitempty"`
-	TotalResults int64 `json:"totalResults,omitempty"`
+	Count        int      `json:"count,omitempty"`
+	HasMore      bool     `json:"hasMore,omitempty"`
+	Items        []Export `json:"items,omitempty"`
+	Limit        int      `json:"limit,omitempty"`
+	Offset       int      `json:"offset,omitempty"`
+	TotalResults int64    `json:"totalResults,omitempty"`
 }
 
-
 type ActivityFieldSearchResponse struct {
-	Count int `json:"count,omitempty"`
-	HasMore bool `json:"hasMore,omitempty"`
-	Items []ActivityField `json:"items,omitempty"`
-	Limit int `json:"limit,omitempty"`
-	Offset int `json:"offset,omitempty"`
-	TotalResults int64 `json:"totalResults,omitempty"`
+	Count        int             `json:"count,omitempty"`
+	HasMore      bool            `json:"hasMore,omitempty"`
+	Items        []ActivityField `json:"items,omitempty"`
+	Limit        int             `json:"limit,omitempty"`
+	Offset       int             `json:"offset,omitempty"`
+	TotalResults int64           `json:"totalResults,omitempty"`
 }
 
 type ActivityFieldListQueryOptions struct {
@@ -65,7 +64,7 @@ func (s *ActivitiesService) CreateExport(ctx context.Context, export *Export) (*
 		return nil, err
 	}
 
-	r :=&Export{}
+	r := &Export{}
 	_, err = s.client.Do(ctx, req, r)
 
 	if err != nil {
@@ -127,4 +126,3 @@ func (s *ActivitiesService) ListFields(ctx context.Context, opt *ActivityFieldLi
 
 	return r, nil
 }
-

@@ -3,6 +3,7 @@ package auth
 import (
 	"net/http"
 )
+
 // BasicAuthTransport is an http.RoundTripper that authenticates all requests
 type BasicAuthTransport struct {
 	Username string // Eloqua username

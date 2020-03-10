@@ -43,12 +43,11 @@ func TestCdosService_CreateExport(t *testing.T) {
 	}
 }
 
-
 func TestCdosService_ListFields(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/customObjects/1/fields", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/customObjects/1/fields", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "GET")
 		fmt.Fprint(w, `{"items": [{"name": "Email Address"}]}`)
 	})
@@ -70,7 +69,7 @@ func TestCdosService_List(t *testing.T) {
 	client, mux, _, teardown := setup()
 	defer teardown()
 
-	mux.HandleFunc("/customObjects", func (w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/customObjects", func(w http.ResponseWriter, r *http.Request) {
 		testMethod(t, r, "GET")
 		fmt.Fprint(w, `{"items": [{"name": "CDO1"}]}`)
 	})

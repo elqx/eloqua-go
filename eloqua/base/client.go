@@ -20,7 +20,7 @@ type Service struct {
 
 type BaseClient struct {
 	BaseURL *url.URL
-	Client *http.Client
+	Client  *http.Client
 	// Reuse a single struct instead of allocating one for each service on the heap.
 	Common Service
 }
@@ -79,7 +79,7 @@ func (c *BaseClient) Do(ctx context.Context, req *http.Request, v interface{}) (
 	return resp, err
 }
 
-func addOptions(u *url.URL, opt interface{}) (error) {
+func addOptions(u *url.URL, opt interface{}) error {
 	v := reflect.ValueOf(opt)
 	if v.Kind() == reflect.Ptr && v.IsNil() {
 		return nil

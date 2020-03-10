@@ -1,8 +1,8 @@
 package bulk
 
 import (
-	"fmt"
 	"context"
+	"fmt"
 )
 
 type CdosService service
@@ -10,32 +10,32 @@ type CdosService service
 type CdoField Field
 
 type Cdo struct {
-	Name string `json:name`
-	DisplayNameFieldUri string `json:displayNameFieldUri`
+	Name                 string `json:name`
+	DisplayNameFieldUri  string `json:displayNameFieldUri`
 	EmailAddressFieldUri string `json:emailAddressFieldUri`
-	UniqueFieldUri string `json:uniqueFieldUri`
-	Uri string `json:uri`
-	CreatedBy string `json:createdBy`
-	CreatedAt string `json:createdAt`
-	UpdatedBy string `json:createdBy`
-	UpdatedAt string `json:updatedAt`
+	UniqueFieldUri       string `json:uniqueFieldUri`
+	Uri                  string `json:uri`
+	CreatedBy            string `json:createdBy`
+	CreatedAt            string `json:createdAt`
+	UpdatedBy            string `json:createdBy`
+	UpdatedAt            string `json:updatedAt`
 }
 
 type CdoFieldSearchResponse struct {
-	Count int `json:"count,omitempty"`
-	HasMore bool `json:"hasMore,omitempty"`
-	Items []CdoField `json:"items,omitempty"`
-	Limit int `json:"limit,omitempty"`
-	Offset int `json:"offset,omitempty"`
-	TotalResults int64 `json:"totalResults,omitempty"`
+	Count        int        `json:"count,omitempty"`
+	HasMore      bool       `json:"hasMore,omitempty"`
+	Items        []CdoField `json:"items,omitempty"`
+	Limit        int        `json:"limit,omitempty"`
+	Offset       int        `json:"offset,omitempty"`
+	TotalResults int64      `json:"totalResults,omitempty"`
 }
 
 type CdoSearchResponse struct {
-	Count int `json:"count,omitempty"`
-	HasMore bool `json:"hasMore,omitempty"`
-	Items []Cdo `json:"items,omitempty"`
-	Limit int `json:"limit,omitempty"`
-	Offset int `json:"offset,omitempty"`
+	Count        int   `json:"count,omitempty"`
+	HasMore      bool  `json:"hasMore,omitempty"`
+	Items        []Cdo `json:"items,omitempty"`
+	Limit        int   `json:"limit,omitempty"`
+	Offset       int   `json:"offset,omitempty"`
 	TotalResults int64 `json:"totalResults,omitempty"`
 }
 
