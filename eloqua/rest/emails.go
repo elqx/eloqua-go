@@ -26,7 +26,7 @@ type Email struct {
 	ContentSections     []json.RawMessage `json:"contentSections,omitempty"`
 	Description         string            `json:"description,omitempty"`
 	DynamicContents     string            `json:"dynamicContents,omitempty"`
-	EmailFolderId       string            `json:"emailFolderId"`
+	EmailFooterId       string            `json:"emailFooterId"`
 	EmailGroupId        string            `json:"emailGroupId"`
 	EmailHeaderId       string            `json:"emailHeaderId"`
 	EncodingId          string            `json:"encodingid"`

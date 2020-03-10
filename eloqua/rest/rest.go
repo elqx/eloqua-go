@@ -48,9 +48,10 @@ type RestClient struct {
 	base.BaseClient
 
 	// Services used for talking with different parts of Eloqua API.
-	Emails    *EmailsService
-	Campaigns *CampaignsService
-	Forms     *FormsService
+	Emails      *EmailsService
+	EmailGroups *EmailGroupsService
+	Campaigns   *CampaignsService
+	Forms       *FormsService
 }
 
 /*
@@ -74,6 +75,7 @@ func NewClient(restURL string, httpClient *http.Client) *RestClient {
 	c := &RestClient{
 		bc,
 		(*EmailsService)(&bc.Common),
+		(*EmailGroupsService)(&bc.Common),
 		(*CampaignsService)(&bc.Common),
 		(*FormsService)(&bc.Common),
 	}
