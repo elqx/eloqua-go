@@ -153,7 +153,7 @@ func NewClient(bulkURL string, httpClient *http.Client) *BulkClient {
 	c := &BulkClient{client: httpClient, baseURL: u}
 	c.common.client = c
 	c.Activities = (*ActivitiesService)(&c.common)
-	c.Accounts = (*Accounts)(&c.common)
+	c.Accounts = (*AccountsService)(&c.common)
 	c.Contacts = (*ContactsService)(&c.common)
 	c.Cdos = (*CdosService)(&c.common)
 	c.Syncs = (*SyncsService)(&c.common)
