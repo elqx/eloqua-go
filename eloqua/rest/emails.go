@@ -21,7 +21,7 @@ type Email struct {
 	FolderId            string            `json:"folderId,omitempty"`
 	Subject             string            `json:"subject"`
 	Archive             string            `json:"archive,omitempty"`
-	Attachments         []json.RawMessge  `json:"attachments,omitempty"`
+	Attachments         []json.RawMessage  `json:"attachments,omitempty"`
 	BounceBackEmail     string            `json:"bounceBackEmail,omitempty"`
 	ContentSections     []json.RawMessage `json:"contentSections,omitempty"`
 	Description         string            `json:"description,omitempty"`
@@ -32,7 +32,6 @@ type Email struct {
 	EncodingId          string            `json:"encodingid"`
 	FieldMerges         []json.RawMessage `json:"fieldMerges,omitempty"`
 	Files               []json.RawMessage `json:"files,omitempty"`
-	FolderId            string            `json:"folderId"`
 	Forms               []json.RawMessage `json:"forms,omitempty"`
 	HtmlContent         json.RawMessage   `json:"htmlContent,omitempty"`
 	Hyperlinks          []json.RawMessage `json:"hyperlinks,omitempty"`

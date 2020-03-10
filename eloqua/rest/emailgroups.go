@@ -40,7 +40,7 @@ type EmailGroupsList struct {
 	PageSummary
 }
 
-func (s *EmailGroupsService) ListEmailGroups(ctx context.Context, options *GetOptions) (*EmailGroups, error) {
+func (s *EmailGroupsService) ListEmailGroups(ctx context.Context, options *GetOptions) (*EmailGroup, error) {
 	req, err := s.Client.NewRequest("GET", "/assets/email/groups", options, nil)
 	if err != nil {
 		return nil, err
