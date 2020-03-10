@@ -32,6 +32,7 @@ type BulkClient struct {
 
 	// Services used for talking with different parts of Eloqua API
 	Activities *ActivitiesService
+	Accounts   *AccountsService
 	Cdos       *CdosService
 	Contacts   *ContactsService
 	Syncs      *SyncsService
@@ -152,6 +153,7 @@ func NewClient(bulkURL string, httpClient *http.Client) *BulkClient {
 	c := &BulkClient{client: httpClient, baseURL: u}
 	c.common.client = c
 	c.Activities = (*ActivitiesService)(&c.common)
+	c.Accounts = (*Accounts)(&c.common)
 	c.Contacts = (*ContactsService)(&c.common)
 	c.Cdos = (*CdosService)(&c.common)
 	c.Syncs = (*SyncsService)(&c.common)
