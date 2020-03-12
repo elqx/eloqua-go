@@ -20,35 +20,35 @@ type Campaign struct {
 	UpdatedAt                string            `json:"updatedAt"`
 	UpdatedBy                string            `json:"updatedBy"`
 	FolderId                 string            `json:"folderId"`
-	IsReadOnly               string            `json:"isReadOnly"`
-	ActualCost               string            `json:"actualCost"`
-	BudgetedCost             string            `json:"budgetedCost"`
-	CampaignCategory         string            `json:"campaignCategory"`
-	CampaignType             string            `json:"campaignType"`
-	IsEmailMarketingCampaign string            `json:"isEmailMarketingCampaign"`
-	IsIncludedInROI          string            `json:"isIncludedInROI"`
-	IsMemberAllowedReEntry   string            `json:"isMemberAllowedReEntry"`
-	IsSyncedWithCRM          string            `json:"isSyncedWithCRM"`
-	Product                  string            `json:"product"`
-	Region                   string            `json:"region"`
+	IsReadOnly               string            `json:"isReadOnly,omitempty"`
+	ActualCost               string            `json:"actualCost,omitempty"`
+	BudgetedCost             string            `json:"budgetedCost,omitempty"`
+	CampaignCategory         string            `json:"campaignCategory,omitempty"`
+	CampaignType             string            `json:"campaignType,omitempty"`
+	IsEmailMarketingCampaign string            `json:"isEmailMarketingCampaign,omitempty"`
+	IsIncludedInROI          string            `json:"isIncludedInROI,omitempty"`
+	IsMemberAllowedReEntry   string            `json:"isMemberAllowedReEntry,omitempty"`
+	IsSyncedWithCRM          string            `json:"isSyncedWithCRM,omitempty"`
+	Product                  string            `json:"product,omitmepty"`
+	Region                   string            `json:"region,omitempty"`
 	FieldValues              []FieldValue      `json:"fieldValues,omitempty"`
-	BadgeId                  string            `json:"badgeId"`
-	ClrEndDate               string            `json:"clrEndDate"`
-	CrmId                    string            `json:"crmId"`
-	EndAt                    string            `json:"endAt"`
-	FirstActivation          string            `json:"firstActivation"`
-	MemberCount              string            `json:"memberCount"`
-	RunAsUserId              string            `json:"runAsUserId"`
-	ScheduledFor             string            `json:"scheduledFor"`
-	SourceTemplateId         string            `json:"sourceTemplateId"`
-	StartAt                  string            `json:"startAt"`
-	Elements                 []json.RawMessage `json:"elements"`
+	BadgeId                  string            `json:"badgeId,omitempty"`
+	ClrEndDate               string            `json:"clrEndDate,omitempty"`
+	CrmId                    string            `json:"crmId,omitempty"`
+	EndAt                    string            `json:"endAt,omitempty"`
+	FirstActivation          string            `json:"firstActivation,omitempty"`
+	MemberCount              string            `json:"memberCount,omitempty"`
+	RunAsUserId              string            `json:"runAsUserId,omitempty"`
+	ScheduledFor             string            `json:"scheduledFor,omitempty"`
+	SourceTemplateId         string            `json:"sourceTemplateId,omitempty"`
+	StartAt                  string            `json:"startAt,omitempty"`
+	Elements                 []json.RawMessage `json:"elements,omitempty"`
 }
 
 type FieldValue struct {
 	Type  string `json:"type"`
 	Id    string `json:"id"`
-	Name  string `json:"name"`
+	Name  string `json:"name,omitempty"`
 	Value string `json:"value"`
 }
 
