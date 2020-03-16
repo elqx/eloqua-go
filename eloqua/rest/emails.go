@@ -21,11 +21,11 @@ type Email struct {
 	FolderId            string            `json:"folderId,omitempty"`
 	Subject             string            `json:"subject"`
 	Archive             string            `json:"archive,omitempty"`
-	Attachments         []json.RawMessage  `json:"attachments,omitempty"`
+	Attachments         []json.RawMessage `json:"attachments,omitempty"`
 	BounceBackEmail     string            `json:"bounceBackEmail,omitempty"`
 	ContentSections     []json.RawMessage `json:"contentSections,omitempty"`
 	Description         string            `json:"description,omitempty"`
-	DynamicContents     string            `json:"dynamicContents,omitempty"`
+	DynamicContents     []json.RawMessage `json:"dynamicContents,omitempty"`
 	EmailFooterId       string            `json:"emailFooterId"`
 	EmailGroupId        string            `json:"emailGroupId"`
 	EmailHeaderId       string            `json:"emailHeaderId"`
