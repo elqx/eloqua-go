@@ -49,7 +49,7 @@ type Email struct {
 	ScheduledFor        string            `json:"scheduledFor,omitempty"`
 	SenderEmail         string            `json:"senderEmail,omitempty"`
 	SenderName          string            `json:"senderName,omitempty"`
-	SendPlainTextOnly   string            `json:"sendPlaintextOnly,omitempty"`
+	SendPlainTextOnly   string            `json:"sendPlainTextOnly,omitempty"`
 	SourceTemplateId    string            `json:"sourceTemplateId,omitempty"`
 	Style               string            `json:"style,omitempty"`
 	VirtualMTAId        string            `json:"virtualMTAId,omitempty"`
