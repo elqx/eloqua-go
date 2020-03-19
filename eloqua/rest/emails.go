@@ -29,7 +29,7 @@ type Email struct {
 	EmailFooterId       string            `json:"emailFooterId"`
 	EmailGroupId        string            `json:"emailGroupId"`
 	EmailHeaderId       string            `json:"emailHeaderId"`
-	EncodingId          string            `json:"encodingid"`
+	EncodingId          string            `json:"encodingId"`
 	FieldMerges         []json.RawMessage `json:"fieldMerges,omitempty"`
 	Files               []json.RawMessage `json:"files,omitempty"`
 	Forms               []json.RawMessage `json:"forms,omitempty"`
